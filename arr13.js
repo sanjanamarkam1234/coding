@@ -1,5 +1,5 @@
-/*The chef visited a grocery store for fresh supplies.
- There are N items in the store where the ith item has a freshness value Ai and cost Bi. 
+/*Chef visited a grocery store for fresh supplies. 
+There are N items in the store where the ith item has a freshness value Ai and cost Bi.
  Chef has decided to purchase all the items having a freshness value greater than or equal to X. 
  Find the total cost of the groceries Chef buys.
 
@@ -10,13 +10,13 @@ The third line contains N space-separated integers, the array B, denoting the co
 
 Output Format:
 For each test case, output on a new line, the total cost of the groceries Chef buys.
-
+ 
 Constraints:
 1 ≤ T ≤ 100
 1 ≤ N, X ≤ 100
 1 ≤ Ai, Bi ≤ 100
 
-Testcases:
+
 Testcase 1:
 Input:
 2 20
@@ -39,47 +39,28 @@ Input:
 10 90 50
 30 7 93
 Output:
-0
-
-Explanation:
-Testcase 1: 
-Only the 2nd item has a freshness value (67) greater than X (20), and the cost is 90.
-
-Testcase 2: 
-All the items have a freshness value greater than or equal to X (1), hence we add all the costs: 1 + 2 + 3 = 6
-
-Testcase 3:
-None of the items has a freshness value greater than or equal to X (100), hence the total is 0*/
-
-
+0*/
 const input = require("readline-sync");
-let n = input.questionInt("enter the number;-");
+let n = input.questionInt("enter the number :");
+let x = input.questionInt("enter the num:")
+let i = 0; j = 0;
 let arr = [];
-let i = 0;
-while (i<n) 
-{
-    arr[i] = input.questionInt("enter the num")
-    i++;
-}
-c = [];
-i = 0;
+let b = [];
+let sum = 0;
 while(i<n)
-{
-    let Element=input.questionInt(`Enter element's `)
-    i++
-}
-i=0
-j=0
-p = [];
-k=0
-while(i<n)
-{
-    if(arr[i] == c[j])
-    {
-        p[i]=arr[k]       
-        j++
-        k++
-    }
-    i++
-}
-    console.log(p);
+   {
+      arr[i] = input.questionInt("freshness value ")
+      b[i]   = input.questionInt("cost of the groceries: ");
+      i++;
+   }
+   i = 0;
+   while(i<n)
+      {
+         while(arr[i] >= x)
+            {
+                 sum = sum + b[i]
+               i++;
+            }
+            i++;
+      }
+      console.log(sum);
