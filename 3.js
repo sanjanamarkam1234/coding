@@ -1,85 +1,62 @@
-/*The chef visited a grocery store for fresh supplies.
- There are N items in the store where the ith item has a freshness value Ai and cost Bi. 
- Chef has decided to purchase all the items having a freshness value greater than or equal to X. 
- Find the total cost of the groceries Chef buys.
+/*Imagine you have a list of numbers. You want to find out how long the longest run of the same number is.
 
-Input Format:
-The first line of each test case contains two space-separated integers N and X — the number of items and the minimum freshness value an item should have.
-The second line contains N space-separated integers, the array A, denoting the freshness value of each item.
-The third line contains N space-separated integers, the array B, denoting the cost of each item.
+For example, in the list [1, 2, 2, 3, 3, 3, 2, 2], the longest run of the same number is 3 (because the number 3 repeats three times in a row).
 
-Output Format:
-For each test case, output on a new line, the total cost of the groceries Chef buys.
+Input:
+A list of numbers.
 
-Constraints:
-1 ≤ T ≤ 100
-1 ≤ N, X ≤ 100
-1 ≤ Ai, Bi ≤ 100
+Output:
+The length of the longest run of the same number in the list.
 
-Testcases:
 Testcase 1:
 Input:
-2 20
-15 67
-10 90
+[1, 2, 2, 3, 3, 3, 3, 2, 2]
 Output:
-90
+4
+Explanation: The longest run is the four consecutive 3s.
 
 Testcase 2:
 Input:
-3 1
-1 2 3
-1 2 3
+[5, 5, 5, 3, 3, 4, 4, 4]
 Output:
-6
+3
+Explanation: Both 5 and 4 have the longest run of three each.
 
 Testcase 3:
 Input:
-3 100
-10 90 50
-30 7 93
+[1]
 Output:
-0
+1
 
-Explanation:
-Testcase 1: 
-Only the 2nd item has a freshness value (67) greater than X (20), and the cost is 90.
-
-Testcase 2: 
-All the items have a freshness value greater than or equal to X (1), hence we add all the costs: 1 + 2 + 3 = 6
-
-Testcase 3:
-None of the items has a freshness value greater than or equal to X (100), hence the total is 0*/
-
-
-const input = require("readline-sync");
-let n = input.questionInt("enter the number;-");
+Turn on screen reader support
+To enabl*/
+const input = require("readline-sync");   
+let n = input.questionInt("enter the array size:-");
 let arr = [];
-let i = 0;
-while (i<n) 
-{
-    arr[i] = input.questionInt("enter the num")
-    i++;
+for (let i = 0; i <n; i++) {
+   
+     arr[i] = input.questionInt("enter  the no.");
+    
 }
-c = [];
-i = 0;
-while(i<n)
+console.log(arr);
+let max =0;
+let count =1;
+for (let i = 0; i < n-1; i++)
 {
-    let Element=input.questionInt(`Enter element's `)
-    i++
-}
-i=0
-j=0
-p = [];
-k=0
-while(i<n)
-{
-    if(arr[i] == c[j])
-    {
-        p[i]=arr[k]       
-        j++
-        k++
-    }
-    i++
-}
-    console.log(p);
+   
+   while(arr[i]==arr[i+1]) 
+   {
+      count++;
+      i++;
+   }
+   if(count>max) 
+   {
+          max = count;
+          count =1;
+   } 
+};
+
+console.log("maximun diplicate no. is:",max);
+
+
+
